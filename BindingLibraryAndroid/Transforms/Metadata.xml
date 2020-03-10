@@ -1,0 +1,54 @@
+﻿<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  --> 
+
+  <attr path="/api/package[@name='com.nexmo.clientcore']/
+        interface[@name='IPushEventListener']/method[@name='onMessageEvent']/parameter[@name='p0']"
+        name="name">paramMessageEvent</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore']/
+        interface[@name='IPushEventListener']/method[@name='onMessageEvent']/parameter[@name='p1']"
+        name="name">paramPushEventInfo</attr>
+
+  <attr path="/api/package[@name='com.nexmo.clientcore']/
+        interface[@name='IPushEventListener']/method[@name='onMemberEvent']/parameter[@name='p0']"
+        name="name">paramMemberEvent</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore']/
+        interface[@name='IPushEventListener']/method[@name='onMemberEvent']/parameter[@name='p1']"
+        name="name">paramPushEventInfo</attr>
+
+  <attr path="/api/package[@name='com.nexmo.clientcore']/
+        interface[@name='IPushEventListener']/method[@name='onCustomEvent']/parameter[@name='p0']"
+        name="name">paramCustomEvent</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore']/
+        interface[@name='IPushEventListener']/method[@name='onCustomEvent']/parameter[@name='p1']"
+        name="name">paramPushEventInfo</attr>
+
+  <attr path="/api/package[@name='com.nexmo.client']/
+    class[@name='NexmoConversation']/
+    method[@name='compareTo' and count(parameter)=1 and
+    parameter[1][@type='com.nexmo.client.NexmoConversation']]/
+    parameter[1]" name="managedType">Java.Lang.Object</attr>
+
+  <attr path="/api/package[@name='com.nexmo.client']/
+  class[@name='NexmoConversation']/method[@name='addTypingEventListener']"
+  name="name">NexmoTypingEvent</attr>
+
+  <attr path="/api/package[@name='com.nexmo.clientcore.network.socket.socket_request']/
+  interface[@name='ResultParser']"
+name="visibility">public</attr>  
+  <attr path="/api/package[@name='com.nexmo.clientcore.network.socket.socket_request']/class[@name='LoginRequest']/method[@name='parse']" name="return">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore.network.socket.socket_request']/class[@name='LogoutRequest']/method[@name='parse']" name="return">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore.network.socket.socket_request']/class[@name='UpdateTokenRequest']/method[@name='parse']" name="return">Java.Lang.Object</attr>  
+  <add-node path="/api/package[@name='com.nexmo.clientcore.network.socket.socket_request']/class[@name='Request']">
+    <method abstract="true" final="false" name="Parse" return="T" visibility="public">
+      <parameter name="p0" type="Org.Json.JSONObject"></parameter>
+      <parameter name="p1" type="Org.Json.JSONObject"></parameter>
+    </method>
+  </add-node>
+  
+</metadata>
