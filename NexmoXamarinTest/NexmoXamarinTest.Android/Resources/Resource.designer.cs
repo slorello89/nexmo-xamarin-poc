@@ -6483,7 +6483,16 @@ namespace NexmoXamarinTest.Droid
 			public const int show_password_duration = 2131296269;
 			
 			// aapt resource value: 0x7F09000E
-			public const int status_bar_notification_info_maxnum = 2131296270;
+			public const int socket_reconnection_delay = 2131296270;
+			
+			// aapt resource value: 0x7F09000F
+			public const int socket_reconnection_delay_max = 2131296271;
+			
+			// aapt resource value: 0x7F090010
+			public const int socket_timeout = 2131296272;
+			
+			// aapt resource value: 0x7F090011
+			public const int status_bar_notification_info_maxnum = 2131296273;
 			
 			static Integer()
 			{
@@ -6889,49 +6898,133 @@ namespace NexmoXamarinTest.Droid
 			public const int abc_toolbar_collapse_description = 2131558438;
 			
 			// aapt resource value: 0x7F0D0027
-			public const int appbar_scrolling_view_behavior = 2131558439;
+			public const int action_media_validation_error = 2131558439;
 			
 			// aapt resource value: 0x7F0D0028
-			public const int bottom_sheet_behavior = 2131558440;
-			
-			// aapt resource value: 0x7F0D0029
-			public const int character_counter_content_description = 2131558441;
+			public const int add_user_to_conv_validation_error = 2131558440;
 			
 			// aapt resource value: 0x7F0D002A
-			public const int character_counter_pattern = 2131558442;
+			public const int appbar_scrolling_view_behavior = 2131558442;
+			
+			// aapt resource value: 0x7F0D0029
+			public const int app_name = 2131558441;
 			
 			// aapt resource value: 0x7F0D002B
-			public const int fab_transformation_scrim_behavior = 2131558443;
+			public const int bad_authToken = 2131558443;
 			
 			// aapt resource value: 0x7F0D002C
-			public const int fab_transformation_sheet_behavior = 2131558444;
+			public const int bottom_sheet_behavior = 2131558444;
 			
 			// aapt resource value: 0x7F0D002D
-			public const int hide_bottom_view_on_scroll_behavior = 2131558445;
+			public const int call_validation_error = 2131558445;
 			
 			// aapt resource value: 0x7F0D002E
-			public const int mtrl_chip_close_icon_content_description = 2131558446;
+			public const int character_counter_content_description = 2131558446;
 			
 			// aapt resource value: 0x7F0D002F
-			public const int password_toggle_content_description = 2131558447;
+			public const int character_counter_pattern = 2131558447;
 			
 			// aapt resource value: 0x7F0D0030
-			public const int path_password_eye = 2131558448;
+			public const int connection_problem_type = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int path_password_eye_mask_strike_through = 2131558449;
+			public const int delete_event_validation_error = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int path_password_eye_mask_visible = 2131558450;
+			public const int delete_image_validation_error = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int path_password_strike_through = 2131558451;
+			public const int enable_push_token_error = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int search_menu_title = 2131558452;
+			public const int fab_transformation_scrim_behavior = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int status_bar_notification_info_overflow = 2131558453;
+			public const int fab_transformation_sheet_behavior = 2131558453;
+			
+			// aapt resource value: 0x7F0D0036
+			public const int get_conv_info_validation_error = 2131558454;
+			
+			// aapt resource value: 0x7F0D0037
+			public const int get_events_validation_error = 2131558455;
+			
+			// aapt resource value: 0x7F0D0038
+			public const int get_user_validation_error = 2131558456;
+			
+			// aapt resource value: 0x7F0D0039
+			public const int hide_bottom_view_on_scroll_behavior = 2131558457;
+			
+			// aapt resource value: 0x7F0D003A
+			public const int invalid_args_type = 2131558458;
+			
+			// aapt resource value: 0x7F0D003B
+			public const int invalid_network_state_type = 2131558459;
+			
+			// aapt resource value: 0x7F0D003C
+			public const int invite_user_to_conv_validation_error = 2131558460;
+			
+			// aapt resource value: 0x7F0D003D
+			public const int join_member_to_conv_validation_error = 2131558461;
+			
+			// aapt resource value: 0x7F0D003E
+			public const int login_validation_error = 2131558462;
+			
+			// aapt resource value: 0x7F0D003F
+			public const int mark_as_delivered_validation_error = 2131558463;
+			
+			// aapt resource value: 0x7F0D0040
+			public const int mark_as_seen_validation_error = 2131558464;
+			
+			// aapt resource value: 0x7F0D0041
+			public const int mtrl_chip_close_icon_content_description = 2131558465;
+			
+			// aapt resource value: 0x7F0D0042
+			public const int mute_media_validation_error = 2131558466;
+			
+			// aapt resource value: 0x7F0D0043
+			public const int password_toggle_content_description = 2131558467;
+			
+			// aapt resource value: 0x7F0D0044
+			public const int path_password_eye = 2131558468;
+			
+			// aapt resource value: 0x7F0D0045
+			public const int path_password_eye_mask_strike_through = 2131558469;
+			
+			// aapt resource value: 0x7F0D0046
+			public const int path_password_eye_mask_visible = 2131558470;
+			
+			// aapt resource value: 0x7F0D0047
+			public const int path_password_strike_through = 2131558471;
+			
+			// aapt resource value: 0x7F0D0048
+			public const int remove_member_from_conv_validation_error = 2131558472;
+			
+			// aapt resource value: 0x7F0D0049
+			public const int search_menu_title = 2131558473;
+			
+			// aapt resource value: 0x7F0D004A
+			public const int send_image_message_validation_error = 2131558474;
+			
+			// aapt resource value: 0x7F0D004B
+			public const int send_request_network_is_not_connected = 2131558475;
+			
+			// aapt resource value: 0x7F0D004C
+			public const int send_text_message_validation_error = 2131558476;
+			
+			// aapt resource value: 0x7F0D004D
+			public const int socket_randomization_factor = 2131558477;
+			
+			// aapt resource value: 0x7F0D004E
+			public const int start_media_validation_error = 2131558478;
+			
+			// aapt resource value: 0x7F0D004F
+			public const int status_bar_notification_info_overflow = 2131558479;
+			
+			// aapt resource value: 0x7F0D0050
+			public const int stop_media_validation_error = 2131558480;
+			
+			// aapt resource value: 0x7F0D0051
+			public const int suspend_media_mising_media_types = 2131558481;
 			
 			static String()
 			{

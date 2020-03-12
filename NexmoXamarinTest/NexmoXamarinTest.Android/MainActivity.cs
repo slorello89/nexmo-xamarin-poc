@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
+using Com.Nexmo.Client;
 
 namespace NexmoXamarinTest.Droid
 {
@@ -14,6 +16,11 @@ namespace NexmoXamarinTest.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            var context = Android.App.Application.Context;
+            NexmoClient.Builder builder = new NexmoClient.Builder();
+            var client = builder.Build(context);
+            NexmoClientHolder.Client = client;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -21,7 +28,7 @@ namespace NexmoXamarinTest.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            LoadApplication(new App(new CallHandler()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

@@ -16,10 +16,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Login"
-                    Clicked="OnLoginButtonClicked" />
+                    Clicked="OnLoginButtonClicked" BackgroundColor="Red" />
             <Button Grid.Column="1"
                     Text="Call"
-                    Clicked="OnCallButtonClicked"/>
+                    Clicked="OnCallButtonClicked" BackgroundColor="Blue"/>
         </Grid>
     </StackLayout>
 

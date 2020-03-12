@@ -25,6 +25,7 @@ namespace NexmoXamarinTest.iOS
         {
             //if(NXMClient.Shared == null)
             //    NXMClient.Shared = new NXMClient();
+            NXMLogger.SetLogLevel(NXMLoggerLevel.Verbose);
             var client = NXMClient.Shared;
             client.SetDelegate(this);
             client.LoginWithAuthToken(jwt);

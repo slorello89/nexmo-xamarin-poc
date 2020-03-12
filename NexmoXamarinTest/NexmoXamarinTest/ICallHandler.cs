@@ -3,7 +3,7 @@ namespace NexmoXamarinTest
 {
     public interface ICallHandler
     {
-        void Login(string userId);
+        void Login(string jwt);
         void StartCall();
     }
 }

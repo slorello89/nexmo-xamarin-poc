@@ -22,7 +22,7 @@ namespace NexmoXamarinTest.iOS
 
             //var logFileName = NXMLogger.LogFileNames;
             //Console.WriteLine(logFileName[0])
-            NXMLogger.SetLogLevel(NXMLoggerLevel.Error);
+            
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");

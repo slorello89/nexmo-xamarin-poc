@@ -153,6 +153,9 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
+    <e p="$USER_HOME$/Downloads/NexmoClient-2.1.1-iOS-Release" t="Include">
+      <e p="NexmoClient.framework" t="Include" />
+    </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_BindingLibrary.-1451740919.00" t="ExcludeRecursive" />
   </component>

@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$USER_HOME$/.nuget/packages/xamarin.forms/4.2.0.709249/build/MonoAndroid10" />
     <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$USER_HOME$/Downloads/NexmoClient-2.1.1-iOS-Release" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
