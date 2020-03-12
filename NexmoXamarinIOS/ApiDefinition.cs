@@ -789,14 +789,14 @@ namespace NexmoXamarinIOS
 		NXMPushTemplate Template { get; }
 	}
 
-	// @interface NXMClient : NSObject
-	[BaseType(typeof(NSObject))]
-	interface NXMClient
+    // @interface NXMClient : NSObject
+    [BaseType(typeof(NSObject))]
+    interface NXMClient
 	{
 		// @property (readonly, nonatomic, class) NXMClient * _Nonnull shared;
 		[Static]
 		[Export("shared")]
-		NXMClient Shared { get; }
+		NXMClient Shared { get; set; }
 
 		// @property (readonly, getter = getConnectionStatus, assign, nonatomic) NXMConnectionStatus connectionStatus;
 		[Export("connectionStatus", ArgumentSemantic.Assign)]

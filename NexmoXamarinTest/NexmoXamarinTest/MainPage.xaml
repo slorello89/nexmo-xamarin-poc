@@ -6,11 +6,21 @@
              mc:Ignorable="d"
              x:Class="NexmoXamarinTest.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Margin="10,35,10,10">
+        <Label Text="Make Call"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />     
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Login"
+                    Clicked="OnLoginButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Call"
+                    Clicked="OnCallButtonClicked"/>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

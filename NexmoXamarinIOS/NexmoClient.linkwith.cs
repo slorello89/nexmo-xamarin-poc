@@ -1,3 +1,3 @@
 ﻿using ObjCRuntime;
 
-//[assembly: LinkWith("NexmoClient.a", SmartLink = true, ForceLoad = true)]
+[assembly: LinkWith("NexmoClient.a", SmartLink = true, ForceLoad = true)]

@@ -23,7 +23,8 @@ namespace NexmoXamarinTest.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            
+            LoadApplication(new App(new CallHandler()));
 
             return base.FinishedLaunching(app, options);
         }

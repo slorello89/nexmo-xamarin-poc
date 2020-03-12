@@ -6,11 +6,11 @@ namespace NexmoXamarinTest
 {
     public partial class App : Application
     {
-        public App()
+        public App(ICallHandler handler)
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPage(handler);
         }
 
         protected override void OnStart()
