@@ -50,5 +50,18 @@ name="visibility">public</attr>
       <parameter name="p1" type="Org.Json.JSONObject"></parameter>
     </method>
   </add-node>
+
+  <!--<add-node path="/api/package[@name='com.nexmo.clientcore.model.conversation']/class[@name='ConversationDeserializer']">
+    <method abstract="false" final="false" name="Parse" return="T" visibility="public">
+      <return>Java.Lang.Object</return>
+      <parameter name="p0" type="GoogleGson.jsonElement"></parameter>
+      <parameter name="p1" type="Java.Lang.Reflect.IType"></parameter>
+      <parameter name="p2" type="GoogleGson.IJsonDeserializationContext"></parameter>
+    </method>
+  </add-node>-->
+
+  <attr path="/api/package[@name='com.nexmo.clientcore.model.conversation']/class[@name='ConversationDeserializer']/method[@name='deserialize']" name="return">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore.model.events']/class[@name='EventDeserializer']/method[@name='deserialize']" name="return">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.nexmo.clientcore.model']/class[@name='PageResponseDeserializer']/method[@name='deserialize']" name="return">Java.Lang.Object</attr>
   
 </metadata>

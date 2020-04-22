@@ -11,15 +11,18 @@ namespace NexmoXamarinTest.Droid
 
         public void Login(string jwt)
         {
-
-            var client = NexmoClientHolder.Client;
-            client.Login(jwt);
+            var factory = Retrofit2.Converter.Gson.GsonConverterFactory.Create();
+            //var client = NexmoClientHolder.Client;            
+            NexmoClient.Get().Login(jwt);
+            
+            //client.Login(jwt);
         }
 
         public void StartCall()
-        {
-            var client = NexmoClientHolder.Client;
-            client.Call("12018675309", NexmoCallHandler.Server, new CallDelegate());
+        {          
+            
+            //var client = NexmoClientHolder.Client;            
+            NexmoClient.Get().Call("Steve's Cell", NexmoCallHandler.Server, new CallDelegate());
         }
     }
 }

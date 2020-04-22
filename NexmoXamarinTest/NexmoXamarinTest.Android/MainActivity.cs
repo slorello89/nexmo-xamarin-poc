@@ -8,6 +8,9 @@ using Android.Widget;
 using Android.OS;
 using Android.Content;
 using Com.Nexmo.Client;
+using Android.Support.V4.App;
+using Android;
+using Android.Support.Design.Widget;
 
 namespace NexmoXamarinTest.Droid
 {
@@ -16,9 +19,10 @@ namespace NexmoXamarinTest.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            var context = Android.App.Application.Context;
+            var context = Android.App.Application.Context;            
             NexmoClient.Builder builder = new NexmoClient.Builder();
-            var client = builder.Build(context);
+            var client = builder.LogLevel(Com.Nexmo.Utils.Logger.LoggerELogLevel.Verbose).Build(context);
+            NexmoClient.Get().SetConnectionListener(new ConnectionListener());
             NexmoClientHolder.Client = client;
 
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -28,6 +32,19 @@ namespace NexmoXamarinTest.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            string[] requiredPermissions = new string[]
+            {
+                Manifest.Permission.RecordAudio,
+                Manifest.Permission.Internet,
+                Manifest.Permission.AccessWifiState,
+                Manifest.Permission.ChangeWifiState,
+                Manifest.Permission.AccessNetworkState,
+                Manifest.Permission.ModifyAudioSettings
+            };
+
+            ActivityCompat.RequestPermissions(this, requiredPermissions, 123);
+            
+
             LoadApplication(new App(new CallHandler()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
