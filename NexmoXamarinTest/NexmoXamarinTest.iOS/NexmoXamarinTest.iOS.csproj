@@ -65,6 +65,11 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+    <EnvironmentVariables>
+    </EnvironmentVariables>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="CallDelegate.cs" />
     <Compile Include="Main.cs" />
@@ -143,9 +148,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\..\..\..\..\Downloads\NexmoClient-2.1.1-iOS-Release\NexmoClient.framework">
+    <NativeReference Include="Native References/NexmoClient.framework">
       <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
 </Project>

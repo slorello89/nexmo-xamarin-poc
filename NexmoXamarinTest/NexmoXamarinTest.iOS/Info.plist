@@ -36,5 +36,20 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Make audio calls</string>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    <key>NSExceptionDomains</key>
+    <dict>
+      <key>http://ngrok.io.slorello.ngrok.io</key>
+      <dict>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+    </dict>
+  </dict>
 </dict>
 </plist>
