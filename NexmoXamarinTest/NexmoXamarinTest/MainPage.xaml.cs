@@ -15,6 +15,8 @@ namespace NexmoXamarinTest
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+
+        string _loggedInUser;
         HttpClient _httpClient;
         ICallHandler _handler;
         public MainPage(ICallHandler handler)
@@ -28,6 +30,7 @@ namespace NexmoXamarinTest
         {
             var siteBase = "SITE_BASE";
             var name = NameEntry.Text.ToLower();
+            _loggedInUser = name.ToLower();
             //var strResult = _httpClient.GetAsync($"{siteBase}/token?name={name}").Result.Content.ReadAsStringAsync().Result;
             //var token = JsonConvert.DeserializeObject<TokenRet>(strResult).Token;
             var token = _httpClient.GetAsync($"{siteBase}/token?name={name}").Result.Content.ReadAsStringAsync().Result;
@@ -36,7 +39,8 @@ namespace NexmoXamarinTest
 
         void OnCallButtonClicked(object sender, EventArgs e)
         {
-            _handler.StartCall();
+            var callee = _loggedInUser == "steve" ? "joe" : "steve";
+            _handler.StartCall(callee);
         }
                     
         public class TokenRet
