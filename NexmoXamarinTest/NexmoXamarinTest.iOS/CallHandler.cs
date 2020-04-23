@@ -27,15 +27,17 @@ namespace NexmoXamarinTest.iOS
             //    NXMClient.Shared = new NXMClient();
             NXMLogger.SetLogLevel(NXMLoggerLevel.Verbose);
             var client = NXMClient.Shared;
+
+
             client.SetDelegate(this);
             client.LoginWithAuthToken(jwt);
         }
 
-        public void StartCall()
+        public void StartCall(string name)
         {
             HandlerCallStatus = CallStatus.CallInitiated;
             var client = NXMClient.Shared;
-            client.Call("12018747427", NXMCallHandler.Server, new Action<NSError, NXMCall>(((error, call) =>
+            client.Call(name, NXMCallHandler.Server, new Action<NSError, NXMCall>(((error, call) =>
             {
                 if (error != null && error.Code != 0)
                 {
@@ -65,6 +67,16 @@ namespace NexmoXamarinTest.iOS
         {
             Console.WriteLine("Error received " + error.Code);
             //do nothing for now
+        }
+
+        public override void DidReceiveCall(NXMClient client, NXMCall call)
+        {
+            call.Answer(OnComplete);
+        }
+
+        public void OnComplete(NSError error)
+        {
+            Console.WriteLine(error);
         }
     }
 }
