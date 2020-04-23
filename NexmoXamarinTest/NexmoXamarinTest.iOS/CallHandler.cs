@@ -37,7 +37,7 @@ namespace NexmoXamarinTest.iOS
         {
             HandlerCallStatus = CallStatus.CallInitiated;
             var client = NXMClient.Shared;
-            client.Call(name, NXMCallHandler.Server, new Action<NSError, NXMCall>(((error, call) =>
+            client.Call(name, NXMCallHandler.InApp, new Action<NSError, NXMCall>(((error, call) =>
             {
                 if (error != null && error.Code != 0)
                 {
