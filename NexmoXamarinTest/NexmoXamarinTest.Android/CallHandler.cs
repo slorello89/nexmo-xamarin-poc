@@ -12,9 +12,10 @@ namespace NexmoXamarinTest.Droid
         public void Login(string jwt)
         {
             var factory = Retrofit2.Converter.Gson.GsonConverterFactory.Create();
+            
             //var client = NexmoClientHolder.Client;            
             NexmoClient.Get().Login(jwt);
-            
+            NexmoClient.Get().AddIncomingCallListener(new CallListener());
             //client.Login(jwt);
         }
 
