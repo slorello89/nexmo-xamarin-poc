@@ -18,11 +18,11 @@ namespace NexmoXamarinTest.Droid
             //client.Login(jwt);
         }
 
-        public void StartCall()
+        public void StartCall(string name)
         {          
             
             //var client = NexmoClientHolder.Client;            
-            NexmoClient.Get().Call("Steve's Cell", NexmoCallHandler.Server, new CallDelegate());
+            NexmoClient.Get().Call(name, NexmoCallHandler.InApp, new CallDelegate());
         }
     }
 }
