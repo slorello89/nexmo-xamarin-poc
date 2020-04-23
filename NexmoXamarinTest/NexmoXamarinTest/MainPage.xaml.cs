@@ -42,12 +42,22 @@ namespace NexmoXamarinTest
             var callee = _loggedInUser == "steve" ? "joe" : "steve";
             _handler.StartCall(callee);
         }
-                    
+
+        void OnCallPstnButtonClicked(object sender, EventArgs e)
+        {
+            var callee = _loggedInUser == "steve" ? "joe" : "steve";
+            _handler.StartCallPstn();
+        }
+
         public class TokenRet
         {
             [JsonProperty("token")]
             public string Token { get; set; }
         }
 
+        private void OnHangupButtonClicked(object sender, EventArgs e)
+        {
+            _handler.EndCall();
+        }
     }
 }

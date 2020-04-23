@@ -54,7 +54,8 @@ namespace NexmoXamarinTest.iOS
 
         public void EndCall()
         {
-            _call.Hangup();            
+            if(_call != null)
+                _call.Hangup();            
         }
 
         public override void DidChangeConnectionStatus(NXMClient client, NXMConnectionStatus status, NXMConnectionStatusReason reason)
@@ -77,6 +78,24 @@ namespace NexmoXamarinTest.iOS
         public void OnComplete(NSError error)
         {
             Console.WriteLine(error);
+        }
+
+        public void StartCallPstn()
+        {
+            HandlerCallStatus = CallStatus.CallInitiated;
+            var client = NXMClient.Shared;
+            client.Call("A Number", NXMCallHandler.Server, new Action<NSError, NXMCall>(((error, call) =>
+            {
+                if (error != null && error.Code != 0)
+                {
+                    Console.WriteLine("error encountered " + error.Code);
+                }
+                else
+                {
+                    _call = call;
+                    _call.SetDelegate(new CallDelegate(this));
+                }
+            })));
         }
     }
 }

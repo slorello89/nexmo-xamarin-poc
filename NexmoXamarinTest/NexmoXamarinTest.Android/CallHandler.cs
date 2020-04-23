@@ -5,8 +5,14 @@ namespace NexmoXamarinTest.Droid
 {
     public class CallHandler : ICallHandler
     {
+        public CallDelegate _Delegate = new CallDelegate();
         public CallHandler()
         {
+        }
+
+        public void EndCall()
+        {
+            _Delegate.HangUp(); 
         }
 
         public void Login(string jwt)
@@ -20,10 +26,13 @@ namespace NexmoXamarinTest.Droid
         }
 
         public void StartCall(string name)
-        {          
-            
-            //var client = NexmoClientHolder.Client;            
-            NexmoClient.Get().Call(name, NexmoCallHandler.InApp, new CallDelegate());
+        {   
+            NexmoClient.Get().Call(name, NexmoCallHandler.InApp, _Delegate);
+        }
+
+        public void StartCallPstn()
+        {
+            NexmoClient.Get().Call("A number", NexmoCallHandler.Server, _Delegate);
         }
     }
 }

@@ -18,16 +18,34 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
             <Button Grid.Row="1"
                     Grid.Column="0" 
                     Text="Login"
+                    TextColor="white"
                     Clicked="OnLoginButtonClicked" BackgroundColor="Red" />
             <Button Grid.Row="1"
                     Grid.Column="1"
                     Text="Call"
+                    TextColor="white"
                     Clicked="OnCallButtonClicked" BackgroundColor="Blue"/>
             <Entry x:Name="NameEntry" BackgroundColor="Gray" HorizontalTextAlignment="Center" Placeholder="Enter your name" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Entry>
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="Call PSTN"
+                    TextColor="white"
+                    Clicked="OnCallPstnButtonClicked" BackgroundColor="Green"/>
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="Hang Up"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    Clicked="OnHangupButtonClicked"
+                    />
         </Grid>
     </StackLayout>
 

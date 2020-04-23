@@ -7,6 +7,8 @@ namespace NexmoXamarinTest.Droid
 {
     public class CallDelegate : Java.Lang.Object, Com.Nexmo.Client.Request_listener.INexmoRequestListener
     {
+
+        NexmoCall _call;
         public CallDelegate()
         {
         }
@@ -15,7 +17,13 @@ namespace NexmoXamarinTest.Droid
 
         //public JniManagedPeerStates JniManagedPeerState => this.JniManagedPeerState;
 
-        
+        public void HangUp()
+        {
+            if (_call != null)
+            {
+                _call.Hangup(new CallDelegate());
+            }
+        }
 
         public void Disposed()
         {
@@ -39,7 +47,10 @@ namespace NexmoXamarinTest.Droid
 
         public void OnSuccess(Java.Lang.Object p0)
         {
-            
+           if (p0 is NexmoCall)
+            {
+                _call = (NexmoCall)p0;
+            }
         }
 
         public void SetJniIdentityHashCode(int value)

@@ -5,5 +5,7 @@ namespace NexmoXamarinTest
     {
         void Login(string jwt);
         void StartCall(string name);
+        void StartCallPstn();
+        void EndCall();
     }
 }
