@@ -4,6 +4,6 @@ namespace NexmoXamarinTest
     public interface ICallHandler
     {
         void Login(string jwt);
-        void StartCall();
+        void StartCall(string name);
     }
 }
